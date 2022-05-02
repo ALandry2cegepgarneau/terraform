@@ -16,17 +16,17 @@ variable "location" {
 variable "resource_group_name" {
   type        = string
   description = "Resource Group name to where resources are going to be deployed"
-  default     = "demo"
+  default     = "test"
 }
 variable "container_group_name" {
   type        = string
   description = "aci name"
-  default     = "httpbin"
+  default     = "nginx"
 }
 variable "container_group_dns" {
   type        = string
   description = "aci name"
-  default     = "httpbin20220422"
+  default     = "nginx"
 }
 resource "azurerm_resource_group" "demo" {
   name     = var.resource_group_name
@@ -40,8 +40,8 @@ resource "azurerm_container_group" "aci" {
   dns_name_label      = var.container_group_dns
   os_type             = "Linux"
   container {
-    name   = "httpbin"
-    image  = "kennethreitz/httpbin:latest"
+    name   = "nginx"
+    image  = "nginx:latest"
     cpu    = "0.5"
     memory = "1.5"
     ports {
