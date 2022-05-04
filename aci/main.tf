@@ -8,6 +8,14 @@ terraform {
 provider "azurerm" {
   features {}
 }
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "terraform"
+    storage_account_name = "tfstateae7cdbfa038a5c86"
+    container_name       = "tfstatedevops"
+    key                  = "tfstatedevops.tfstate"
+  }
+}
 variable "location" {
   type        = string
   description = "Location of Azure resources"
