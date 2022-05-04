@@ -19,7 +19,7 @@ terraform {
 variable "location" {
   type        = string
   description = "Location of Azure resources"
-  default     = "uksouth"
+  default     = "can-east"
 }
 variable "resource_group_name" {
   type        = string
