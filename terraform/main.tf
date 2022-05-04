@@ -34,7 +34,7 @@ variable "container_group_name" {
 variable "container_group_dns" {
   type        = string
   description = "aci name"
-  default     = "nginx"
+  default     = "nginx221851544"
 }
 resource "azurerm_resource_group" "demo" {
   name     = var.resource_group_name
