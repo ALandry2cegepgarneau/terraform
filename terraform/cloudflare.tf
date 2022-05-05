@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 3.0"
-    }
-  }
-}
-
 provider "cloudflare" {
   email     = "ALandry2@cegepgarneau.ca"
   api_token = "TVUHdfnz_h6KcX943Kz-iOMkms-THvvUmRCfEnGI"
