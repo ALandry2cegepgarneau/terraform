@@ -14,10 +14,15 @@ variable "location" {
   description = "Location of Azure resources"
   default     = "canadaeast"
 }
-variable "resource_group_name" {
+variable "resource_group_name1" {
   type        = string
   description = "Resource Group name to where resources are going to be deployed"
-  default     = "test"
+  default     = "test1"
+}
+variable "resource_group_name2" {
+  type        = string
+  description = "Resource Group name to where resources are going to be deployed"
+  default     = "test2"
 }
 variable "container_group_name" {
   type        = string
@@ -29,10 +34,16 @@ variable "container_group_dns" {
   description = "aci name"
   default     = "nginx221851544"
 }
-resource "azurerm_resource_group" "demo" {
-  name     = var.resource_group_name
+resource "azurerm_resource_group" "demo1" {
+  name     = var.resource_group_name1
   location = var.location
 }
+
+resource "azurerm_resource_group" "demo2" {
+  name     = var.resource_group_name2
+  location = var.location
+}
+
 #resource "azurerm_container_group" "aci" {
 #  name                = var.container_group_name
 #  resource_group_name = var.resource_group_name
