@@ -55,7 +55,24 @@ jobs:
         tf_actions_version: 0.14.8
         tf_actions_subcommand: 'plan'
         tf_actions_working_dir: "./terraform"
- 
+
+jobs:
+  terrascan_job:
+    runs-on: ubuntu-latest
+    name: terrascan-action
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Run Terrascan
+      id: terrascan
+      uses: accurics/terrascan-action@main
+      with:
+        iac_type: 'terraform'
+        iac_version: 'v14'
+        policy_type: 'azure'
+        only_warn: false
+        sarif_upload: false
+
     #- name: Terraform Apply
     #  if: github.ref == 'refs/heads/main'
     #  uses: hashicorp/terraform-github-actions@master
