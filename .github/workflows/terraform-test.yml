@@ -1,10 +1,10 @@
 ## GitHub Action to deploy Terraform into Azure
-name: 'Terraform-Dev'
+name: 'Terraform-test'
  
 on:
   push:
     branches:
-    - dev
+    - test
   pull_request:
  
 jobs:
