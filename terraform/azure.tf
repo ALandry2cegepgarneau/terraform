@@ -29,6 +29,11 @@ variable "resource_group_name2" {
   description = "Resource Group name to where resources are going to be deployed"
   default     = "test2"
 }
+variable "resource_group_name3" {
+  type        = string
+  description = "Resource Group name to where resources are going to be deployed"
+  default     = "test3"
+}
 variable "container_group_name" {
   type        = string
   description = "aci name"
@@ -46,6 +51,10 @@ resource "azurerm_resource_group" "rg1" {
 }
 resource "azurerm_resource_group" "rg2" {
   name     = var.resource_group_name2
+  location = var.location2
+}
+resource "azurerm_resource_group" "rg3" {
+  name     = var.resource_group_name3
   location = var.location2
 }
 #resource "azurerm_container_group" "aci" {
